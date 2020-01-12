@@ -1,0 +1,69 @@
+<div class="container">
+    <%= form_with(model: restorent, local: true) do |form| %>
+      <% if restorent.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(restorent.errors.count, "error") %> prohibited this restorent from being saved:</h2>
+
+        <ul>
+          <% restorent.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, class:"form-control"%>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :image %>
+      <%= form.text_area :image, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :website %>
+      <%= form.text_field :website,class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :location %>
+      <%= form.text_field :location, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :onlineDelivery %>
+      <%= form.radio_button :onlineDelivery, 'Yes' %> Yes <%= form.radio_button :onlineDelivery, 'None' %> None 
+    </div>
+
+    <div class="form-group">
+      <%= form.label :table_Booking %>
+      <%= form.radio_button :table_Booking, 'Yes' %> Yes <%= form.radio_button :table_Booking, 'None' %> None 
+    </div>
+
+    <div class="form-group">
+      <%= form.label :cuisine %>
+      <%= form.text_field :cuisine, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :currency %>
+      <%= form.text_field :currency, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :price %>
+      <%= form.number_field :price, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.hidden_field  :user_id, value: current_user.id, class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= form.submit %>
+    </div>
+  <% end %>
+
+</div>

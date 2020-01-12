@@ -1,0 +1,34 @@
+<div class="container">
+  <%= form_with(model: breakfast, local: true) do |form| %>
+  <% if breakfast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(breakfast.errors.count, "error") %> prohibited this breakfast from being saved:</h2>
+
+      <ul>
+        <% breakfast.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class:"form-control"  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :restorent_id %>
+    <%= form.hidden_field :restorent_id, value: current_user.id, class:"form-control"  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<div>

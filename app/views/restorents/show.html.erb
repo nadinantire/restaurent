@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restorent.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @restorent.image %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @restorent.website %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @restorent.location %>
+</p>
+
+<p>
+  <strong>Onlinedelivery:</strong>
+  <%= @restorent.onlineDelivery %>
+</p>
+
+<p>
+  <strong>Table booking:</strong>
+  <%= @restorent.table_Booking %>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @restorent.cuisine %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @restorent.currency %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @restorent.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @restorent.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_restorent_path(@restorent) %> |
+<%= link_to 'Back', restorents_path %>

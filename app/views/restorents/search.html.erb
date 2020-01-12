@@ -1,0 +1,43 @@
+<h3>Search Result</h3>  
+
+   
+        <div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>Image</th>
+         <th>Website</th>
+         <th>Location</th>
+         <th>Onlinedelivery</th>
+         <th>Table booking</th>
+         <th>Cuisine</th>
+         <th>Currency</th>
+         <th>Price</th>
+         <th>User</th>
+         <th colspan="3"></th>
+       </tr>
+     </thead>
+
+    <tbody>
+       <% @restorents.each do |restorent| %>
+         <tr>
+           <td><%= restorent.name %></td>
+           <td><%= restorent.image %></td>
+           <td><%= restorent.website %></td>
+           <td><%= restorent.location %></td>
+           <td><%= restorent.onlineDelivery %></td>
+           <td><%= restorent.table_Booking %></td>
+           <td><%= restorent.cuisine %></td>
+           <td><%= restorent.currency %></td>
+           <td><%= restorent.price %></td>
+           <td><%= restorent.user_id %></td>
+           <td><%= link_to 'Show', restorent %></td>
+           <td><%= link_to 'Edit', edit_restorent_path(restorent) %></td>
+           <td><%= link_to 'Destroy', restorent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  

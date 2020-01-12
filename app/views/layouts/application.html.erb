@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurent</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><div class="style">Restaurent</div>
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "#{key}") %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to 'Home', restorents_path,class:"btn btn-outline-primary" %>
+          <%= link_to 'Lunch', lunches_path,class:"btn btn-outline-primary" %>
+          <%= link_to 'breakfast', breakfasts_path,class:"btn btn-outline-primary" %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class:"btn btn-outline-primary" %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, method: :delete, class:"btn btn-outline-primary" %>
+        <% else %>
+        <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class:"btn btn-outline-primary" %>
+        <%= link_to "Login", new_user_session_path, class:"btn btn-outline-primary" %>
+        <% end %>
+
+
+   
+      </div>
+    </nav>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+  </body>
+</html>
