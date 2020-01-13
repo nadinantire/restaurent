@@ -1,13 +1,15 @@
-<%= form_tag(search_page_path, :method => "get",   
-    class: 'navbar-form navbar-left') do %>  
-  <div class="input-group">  
-    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
-    <div class="input-group-btn">  
-      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:location => nil%>  
-    </div>  
-  </div>  
-<% end %>
-
+<div class="search"
+   <%= form_tag(search_page_path, :method => "get",   
+     class: 'navbar-form navbar-left') do %>  
+       <div class="input-group">  
+         <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+           <div class="input-group-btn">  
+             <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:location => nil%>  
+            </div>  
+          </div>  
+        </div>
+    <% end %>
+</end>
 <div class= "containers">   
  <div class= "restaurent">
   <p id="notice"><%= notice %></p>
@@ -48,7 +50,7 @@
            <td><%= link_to 'Edit', edit_restorent_path(restorent) %></td>
            <td><%= link_to 'Destroy', restorent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
          </tr>
-      <% end %>
+      
     </tbody>
   </table>
 </div>
@@ -56,3 +58,40 @@
 
   <%= link_to 'New Restorent', new_restorent_path %>
   </div>
+  
+<!-- Card --><br>
+
+
+<!-- Card -->
+<div class="card booking-card">
+
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title font-weight-bold"><a><%= restorent.name %> Restaurant</a></h4>
+    <p class="card-text">website</a> <%= restorent.website %> </a></p>
+    <p class="card-text">Location</a> <%= restorent.location %></p>
+    <p class="card-text">Onlinedelivery</a> <%= restorent.onlineDelivery %> </a></p>
+    <p class="card-text">Table_Booking</a> <%= restorent.table_Booking %> </a></p>
+    <p class="card-text">Cuisine</a> <%= restorent.cuisine %></p>
+    <p class="card-text">Currency</a> <%= restorent.currency %></p>
+    <p class="card-text">Price</a> <%= restorent.price %></p>
+  
+
+    <!-- Button -->
+    <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">More...</a>
+
+  </div>
+
+</div>
+<!-- Card -->
+<% end %>

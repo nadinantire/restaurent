@@ -6,6 +6,7 @@
     width: 80%;
     margin: auto;
     background-color: whitesmoke;
+    padding: 10px;
     
 }
 // .containers{
@@ -24,3 +25,30 @@
 //     background:whitesmoke;
 //     float: left;
 // }
+.collapse-content .fa.fa-heart:hover {
+    color: #f44336 !important;
+  }
+  .collapse-content .fa.fa-share-alt:hover {
+    color: #0d47a1 !important;
+  }
+  .card {
+    width: 30%;
+  }
+  .login{
+    width: 30%;
+    margin: auto;
+    background-color: rgb(243, 243, 236);
+    padding: 5px;
+    
+  }
+  .buttons{
+    width: 30;
+  }
+  .btns{
+    width: 100%;
+  }
+  .search{
+    width: 20%;
+  }
+  
+  
