@@ -61,9 +61,30 @@
       <%= form.hidden_field  :user_id, value: current_user.id, class:"form-control" %>
     </div>
 
-    <div class="form-group">
-      <%= form.submit %>
-    </div>
-  <% end %>
+  <hr>
 
+  <div class="row m-auto">
+    <div class="col text-left">
+      <h3 class="text-orange">Breakfast</h3>
+      <%= form.fields_for :breakfasts do |ff| %>
+      <div class="form-group form-inline">
+        <%= ff.text_field :name, class: "form-control mr-2", placeholder: "Add item" %>
+        <%= ff.text_field :price, class: "form-control w-25", placeholder: "Price" %>
+      </div>
+      <% end %>
+    </div>
+    <div class="col text-left">
+      <h3 class="text-orange">Lunch</h3>
+      <%= form.fields_for :lunches do |ff| %>
+        <div class="form-group form-inline">
+          <%= ff.text_field :name, class: "form-control mr-2", placeholder: "Add item" %>
+          <%= ff.text_field :price, class: "form-control w-25", placeholder: "Price" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-group">
+  <%= form.submit %>
+</div>
+<% end %>
 </div>

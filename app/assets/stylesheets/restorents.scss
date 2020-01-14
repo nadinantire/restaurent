@@ -31,9 +31,7 @@
   .collapse-content .fa.fa-share-alt:hover {
     color: #0d47a1 !important;
   }
-  .card {
-    width: 30%;
-  }
+  
   .login{
     width: 30%;
     margin: auto;
@@ -50,5 +48,34 @@
   .search{
     width: 20%;
   }
+  .main{
+    width: 100%;
+    background-color: blue
+  }
+  .rest{
+    // widows: 5%;
+    
+    background-color: yellow;
+    float: left;
+  }
+  .lunch{
+    width: 40%;
+    background-color: red;
+    float: right;
+    margin-bottom: auto;
   
+  }
+  .podzo{
+    font-weight: bolder;
+    font-size: 30px;
+}
+link:hover{
+  text-decoration: none;
+  background-color: transparent;
+}
+.nav-item{
+    padding-left: 60px;
+    font-size: 14px;
+    font-weight: normal;
+}
   

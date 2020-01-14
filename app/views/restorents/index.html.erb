@@ -10,54 +10,15 @@
         </div>
     <% end %>
 </end>
-<div class= "containers">   
- <div class= "restaurent">
   <p id="notice"><%= notice %></p>
 
 <h1>Restorents</h1>
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-     <thead>
-       <tr>
-         <th>Name</th>
-         <th>Image</th>
-         <th>Website</th>
-         <th>Location</th>
-         <th>Onlinedelivery</th>
-         <th>Table booking</th>
-         <th>Cuisine</th>
-         <th>Currency</th>
-         <th>Price</th>
-         <th>User</th>
-         <th colspan="3"></th>
-       </tr>
-     </thead>
-
-    <tbody>
-       <% @restorents.each do |restorent| %>
-         <tr>
-           <td><%= restorent.name %></td>
-           <td><%= restorent.image %></td>
-           <td><%= restorent.website %></td>
-           <td><%= restorent.location %></td>
-           <td><%= restorent.onlineDelivery %></td>
-           <td><%= restorent.table_Booking %></td>
-           <td><%= restorent.cuisine %></td>
-           <td><%= restorent.currency %></td>
-           <td><%= restorent.price %></td>
-           <td><%= restorent.user_id %></td>
-           <td><%= link_to 'Show', restorent %></td>
-           <td><%= link_to 'Edit', edit_restorent_path(restorent) %></td>
-           <td><%= link_to 'Destroy', restorent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-         </tr>
-      
-    </tbody>
-  </table>
-</div>
-<br>
+<div class="card-columns">
+   <% @restorents.each do |restorent| %>
+         
 
   <%= link_to 'New Restorent', new_restorent_path %>
-  </div>
+
   
 <!-- Card --><br>
 
@@ -78,20 +39,17 @@
 
     <!-- Title -->
     <h4 class="card-title font-weight-bold"><a><%= restorent.name %> Restaurant</a></h4>
-    <p class="card-text">website</a> <%= restorent.website %> </a></p>
+    
     <p class="card-text">Location</a> <%= restorent.location %></p>
-    <p class="card-text">Onlinedelivery</a> <%= restorent.onlineDelivery %> </a></p>
-    <p class="card-text">Table_Booking</a> <%= restorent.table_Booking %> </a></p>
-    <p class="card-text">Cuisine</a> <%= restorent.cuisine %></p>
-    <p class="card-text">Currency</a> <%= restorent.currency %></p>
-    <p class="card-text">Price</a> <%= restorent.price %></p>
+    
   
 
     <!-- Button -->
-    <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">More...</a>
+    <%= link_to 'more...', restorent %>
 
   </div>
 
 </div>
 <!-- Card -->
 <% end %>
+</div>

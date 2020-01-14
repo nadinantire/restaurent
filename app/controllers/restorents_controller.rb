@@ -27,10 +27,14 @@ class RestorentsController < ApplicationController
   # GET /restorents/new
   def new
     @restorent = Restorent.new
+    4.times {@restorent.breakfasts.build}
+    4.times {@restorent.lunches.build}
   end
 
   # GET /restorents/1/edit
   def edit
+    1.times {@restorent.breakfasts.build}
+    1.times {@restorent.lunches.build}
   end
 
   # POST /restorents
@@ -81,6 +85,6 @@ class RestorentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restorent_params
-      params.require(:restorent).permit(:name, :image, :website, :location, :onlineDelivery, :table_Booking, :cuisine, :currency, :price, :user_id, :search)
+      params.require(:restorent).permit(:name, :image, :website, :location, :onlineDelivery, :table_Booking, :cuisine, :currency, :price, :user_id, :search,:user_id, breakfasts_attributes: [:id, :name, :price], lunches_attributes: [:id, :name, :price])
     end
 end

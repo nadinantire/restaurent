@@ -13,26 +13,42 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><div class="style">Restaurent</div>
-        <% flash.each do |key, value| %>
-          <%= content_tag(:div, value, class: "#{key}") %>
-        <% end %>
-        <% if user_signed_in? %>
-          <%= link_to 'Home', restorents_path,class:"btn btn-outline-primary" %>
-          <%= link_to 'Lunch', lunches_path,class:"btn btn-outline-primary" %>
-          <%= link_to 'breakfast', breakfasts_path,class:"btn btn-outline-primary" %>
-          <%= link_to 'Edit profile', edit_user_registration_path, class:"btn btn-outline-primary" %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, method: :delete, class:"btn btn-outline-primary" %>
-        <% else %>
-        <li class="nav-item"><%= link_to "Sign up", new_user_registration_path, class:"btn btn-outline-primary" %>
-        <%= link_to "Login", new_user_session_path, class:"btn btn-outline-primary" %>
-        <% end %>
-
-
    
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+      <!-- SideNav slide-out button -->
+      <div class="logo-text">
+        <a class="nav-link podzo"> <span class="clearfix d-none d-sm-inline-block" style="color:#ff6000;font-weight:bolder">PODZO</i></span></a>   
       </div>
+      
+      <ul class="nav navbar-nav nav-flex-icons ml-auto">
+        <li class="nav-item">
+          <%= link_to 'Home', restorents_path, :class => 'navbar-link',style:'color:#ff6000;font-weight:bold' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Restaurants', restorents_path, :class => 'navbar-link',style:'color:#bcbdbf;font-weight:bold' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Contact', restorents_path, :class => 'navbar-link',style:'color:#bcbdbf;font-weight:bold' %>
+        </li>
+        <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'New Restaurent', new_restorent_path, :class => 'navbar-link',style:'color:#bcbdbf;font-weight:bold' %></i>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link',style:'color:red;text-decoration:none;font-weight:bold'  %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          |
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path,style:'color:black;'  %></i>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class:'signup'  %></i>
+        </li>
+       <% end %>
+      </ul>
     </nav>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
